@@ -7,8 +7,9 @@ gem 'devise'
 gem 'mysql2'#sudo apt-get install libmysql-ruby libmysqlclient-dev
 gem 'will_paginate', '~> 3.0'
 gem 'nokogiri'
-gem 'capistrano', '~> 3.0'
-gem 'capistrano-rvm', '~> 0.1.0'
+gem 'capistrano', '~> 2.0'
+#gem 'capistrano-rvm', '~> 0.1.0'
+#gem 'capistrano-bundler'
 
 group :assets do
   gem 'sass-rails',   '~> 4.0.0'
@@ -30,7 +31,7 @@ end
 
 group :production do
   gem 'unicorn'
-  gem "therubyracer"
+  #gem "therubyracer"
 end
 
 # Use ActiveModel has_secure_password

@@ -108,6 +108,7 @@ set :repository,      "ssh://#{user}@#{deploy_server}/home/#{user}/git/#{applica
 
 ## --- Ниже этого места ничего менять скорее всего не нужно ---
 
+#before 'deploy:finalize_update', 'set_current_release'
 before 'deploy:finalize_update', 'set_current_release'
 task :set_current_release, :roles => :app do
     set :current_release, latest_release
@@ -117,6 +118,7 @@ end
 
 
 # - for unicorn - #
+=begin
 namespace :deploy do
   desc "Start application"
   task :start, :roles => :app do
@@ -133,3 +135,4 @@ namespace :deploy do
     run "[ -f #{unicorn_pid} ] && kill -USR2 `cat #{unicorn_pid}` || #{unicorn_start_cmd}"
   end
 end
+=end

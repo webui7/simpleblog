@@ -1,29 +1,3 @@
-#--set :application, "set your application name here"
-#--set :repository,  "set your repository location here"
-
-# set :scm, :git # You can set :scm explicitly or Capistrano will make an intelligent guess based on known version control directory names
-# Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
-
-#--role :web, "your web-server here"                          # Your HTTP server, Apache/etc
-#--role :app, "your app-server here"                          # This may be the same as your `Web` server
-#--role :db,  "your primary db-server here", :primary => true # This is where Rails migrations will run
-#--role :db,  "your slave db-server here"
-
-# if you want to clean up old releases on each deploy uncomment this:
-# after "deploy:restart", "deploy:cleanup"
-
-# if you're still using the script/reaper helper you will need
-# these http://github.com/rails/irs_process_scripts
-
-# If you are using Passenger mod_rails uncomment this:
-# namespace :deploy do
-#   task :start do ; end
-#   task :stop do ; end
-#   task :restart, :roles => :app, :except => { :no_release => true } do
-#     run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
-#   end
-# end
-
 # По умолчанию для дистрибуции проектов используется Bundler.
 # Эта строка включает автоматическое обновление и установку
 # недостающих gems, указанных в вашем Gemfile.
@@ -37,7 +11,6 @@
 # Если вы используете другую систему управления зависимостями,
 # закомментируйте эту строку.
 require 'bundler/capistrano'
-#require 'sidekiq/capistrano'
 
 ## Чтобы не хранить database.yml в системе контроля версий, поместите
 ## dayabase.yml в shared-каталог проекта на сервере и раскомментируйте
@@ -65,11 +38,11 @@ load 'deploy/assets'
 # Если вы не используете авторизацию SSH по ключам И ssh-agent,
 # закомментируйте эту опцию.
 ssh_options[:forward_agent] = true
-default_run_options[:pty] = true
+
 # Имя вашего проекта в панели управления.
 # Не меняйте это значение без необходимости, оно используется дальше.
 set :application,     "simpleblog"
-#set :deploy_via, :copy
+
 # Сервер размещения проекта.
 set :deploy_server,   "fluorine.locum.ru"
 
@@ -88,8 +61,8 @@ role :app,            deploy_server
 role :db,             deploy_server, :primary => true
 
 # Следующие строки необходимы, т.к. ваш проект использует rvm.
-set :rvm_ruby_string, "ruby-2.0.0-p353"
-set :rake,            "rvm use #{rvm_ruby_string} do bundle exec rake"
+set :rvm_ruby_string, "2.0.0"
+set :rake,            "rvm use #{rvm_ruby_string} do bundle exec rake" 
 set :bundle_cmd,      "rvm use #{rvm_ruby_string} do bundle"
 
 # Настройка системы контроля версий и репозитария,
@@ -133,4 +106,3 @@ namespace :deploy do
     run "[ -f #{unicorn_pid} ] && kill -USR2 `cat #{unicorn_pid}` || #{unicorn_start_cmd}"
   end
 end
-
