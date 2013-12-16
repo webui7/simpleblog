@@ -1,0 +1,35 @@
+<div class="">
+<nav class="top-bar" data-topbar> 
+	<ul class="title-area"> 
+	    <!-- Title Area -->
+	    <li class="name">
+	      <a href="http://<%=request.host%>">SIMPLE BLOG</a>
+	    </li>
+	    <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+	    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+	</ul> 
+	
+	<section class="top-bar-section"> 
+		<!-- Right Nav Section --> 
+		<ul class="right"> 
+	        <% if user_signed_in? %>
+	        	<li><div class=user_nav> Welcome! <%= current_user.name %></div></li>
+	        	<li class="divider"></li>
+	        	<li ><a href="/edit_name">Edit Your Name</a></li>
+	        	<li class="divider"></li>
+	        	<li><%= link_to 'Sign out', destroy_user_session_path %></li>
+	        <% else %>
+	        	<li><%= link_to 'Register', new_user_registration_path %></li><li> <div class=user_nav>or</div> </li><li><%= link_to 'Sign in', new_user_session_path %></li>
+	        <% end %>
+		</ul> 
+		<!-- Left Nav Section --> 
+		<ul class="left">
+      		<li class="divider"></li>
+      		<li ><a href="/posts/new">+ Create Post</a></li>
+      		<li class="divider"></li>
+      		<%if user_signed_in?%>
+      			<li ><a href="/posts">All Your Posts</a></li>
+      		<%end%>
+    	</ul>
+</nav>
+</div>

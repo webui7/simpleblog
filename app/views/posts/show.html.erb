@@ -1,0 +1,14 @@
+<div class="row">
+<p id="notice"><%= flash[:notice] %></p>
+</div>
+<div class="row panel">
+    <div class="row post-title"><%= @post.title %></div>
+    <div class="row post-time"><%= @post.updated_at.time %></div>
+    <div class="row post-tags"><%= show_tags(@post.tags) %></div>
+    <hr>
+    <div class="row post-body"><%= @post.body %></div>
+</div>
+<div class="row">
+<%= link_to 'Edit again', edit_post_path(@post), class: "tiny button"%> 
+<%= link_to 'Back to Posts', posts_path, class: "tiny button"%>
+</div>

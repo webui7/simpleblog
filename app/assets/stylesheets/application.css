@@ -1,0 +1,112 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require foundation_and_overrides
+
+ *= require_tree .
+ */
+
+.user_nav{
+	color:#2BA6CB;
+	background-color:#000;
+	font-size: 0.8125em;
+	font-weight: bold;
+	line-height: 45px;
+	padding-right:10px;
+}
+
+.max-width-wrap-divise {
+	max-width: 300px;
+	margin: auto;
+}
+
+.max-width-wrap-divise a{
+	display: inline-block;
+	padding-top: 7px;
+}
+
+.max-width-wrap-divise h2{
+	font-size: 2.3125em;
+	font-weight: bold;
+	padding: 10px 0;
+}
+
+.divider{
+	border-right: solid 1px #ddd !important;
+}
+
+.name{
+	line-height: 45px;
+}
+
+.name a{
+	display:block;
+	font-weight:bold;
+	margin: 0 10px 0 10px;
+	color:#2BA6CB;
+}
+
+.name a:hover{
+	color:#2BA6CB;
+}
+
+.max-width-wrap{
+	max-width:1200px;
+	margin:auto;
+}
+
+.top-bar-section a{
+	font-weight:bold !important;
+}
+
+.create-post{
+	padding: 10px 0;
+}
+
+.post-time{
+	padding-left:17px;
+	color:#008cba;
+	font-size: 0.8em;
+}
+
+.post-title{
+	padding:  0 0 10px 17px ;
+	font-weight: bold;
+	font-size: 1.5em;
+	color:#008cba;
+}
+
+.post-tags{
+	padding-left: 10px;
+	padding-top: 5px;
+}
+
+.post-body{
+	padding: 10px;
+	margin: 10px !important;
+	margin-top: 10px !important;
+	margin-bottom: 20px !important;
+	border: 2px solid #fff;
+	background-color: rgb(245, 245, 245);
+}
+
+#notice{
+	color: red !important;
+} 
+
+a.tag-item {
+	margin:5px;
+	display: inline-block;	
+}
+
+a:hover.tag-item {
+	color:#008cba;;	
+}

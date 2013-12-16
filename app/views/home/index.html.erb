@@ -1,0 +1,13 @@
+<div class="row">
+	<h1>Simple Blog Posts</h1>
+</div>
+<% @posts.each do |post| %>
+<div class="row panel">
+    <div class="row post-title"><%= post.title %></div>
+    <div class="row post-time"><%= post.updated_at.time %></div>
+    <div class="row post-time"><%= link_to post.user.name, "posts_by_user/#{post.user.name}" %></div>
+    <div class="row post-tags"><%= show_tags(post.tags) %></div>
+	<%= link_to 'Read the post', post, class: "tiny button" %>
+</div>
+<% end %>
+<div class="row"><%= will_paginate @posts%></div>				

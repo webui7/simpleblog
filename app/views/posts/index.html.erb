@@ -1,0 +1,18 @@
+<div class="row">
+	<p id="notice"><%= flash[:notice] %></p>
+	<h1>Your Posts</h1>
+</div>
+
+<% @posts.each do |post| %>
+<div class="row panel">
+    <div class="row post-title"><%= post.title %></div>
+    <div class="row post-time"><%= post.updated_at.time %></div>
+    <div class="row post-tags"><%= show_tags(post.tags) %></div>
+    <hr>
+    <div class="row post-body"><%= post.body %></div>
+	<%#= link_to 'Show', post, class: "tiny button" %>
+	<%= link_to 'Edit', edit_post_path(post), class: "tiny button" %>
+    <%= link_to 'Destroy', post, confirm: 'Are you sure?', method: :delete, class: "tiny button" %>
+</div>
+<% end %>
+<div class="row"><%= will_paginate @posts%></div>
