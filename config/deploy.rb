@@ -133,3 +133,4 @@ namespace :deploy do
     run "[ -f #{unicorn_pid} ] && kill -USR2 `cat #{unicorn_pid}` || #{unicorn_start_cmd}"
   end
 end
+

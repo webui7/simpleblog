@@ -7,6 +7,8 @@ gem 'devise'
 gem 'mysql2'#sudo apt-get install libmysql-ruby libmysqlclient-dev
 gem 'will_paginate', '~> 3.0'
 gem 'nokogiri'
+gem 'capistrano', '~> 3.0'
+gem 'capistrano-rvm', '~> 0.1.0'
 
 group :assets do
   gem 'sass-rails',   '~> 4.0.0'
@@ -34,7 +36,7 @@ end
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 # Use Capistrano for deployment
-gem 'capistrano', group: :development
+#gem 'capistrano', group: :development
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
