@@ -6,6 +6,7 @@ gem 'foundation-rails'
 gem 'devise'
 gem 'mysql2'#sudo apt-get install libmysql-ruby libmysqlclient-dev
 gem 'will_paginate', '~> 3.0'
+gem 'nokogiri'
 
 group :assets do
   gem 'sass-rails',   '~> 4.0.0'
