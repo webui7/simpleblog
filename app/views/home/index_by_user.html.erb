@@ -1,5 +1,6 @@
 <div class="row">
 	<h1>Simple Blog Posts</h1>
+	<h2>Post By User: "<%=@user.name%>"</h2>
 </div>
 <% @posts.each do |post| %>
 <div class="row panel">
@@ -10,4 +11,4 @@
 	<%= link_to 'Read the post', "/home/#{post.id}", class: "tiny button" %>
 </div>
 <% end %>
-<div class="row"><%= will_paginate @posts%></div>
+<div class="row"><%= will_paginate @posts%></div>				

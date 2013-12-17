@@ -8,8 +8,24 @@
     <hr>
     <div class="row post-body"><%= @post.body %></div>
 </div>
+<div class="row ">
+<%if @post.comments.present?%>
+	<h2>Comments</h2
+<%end%>
+</div>
+<%= render "comments/comments_list"%>
 <div class="row">
-<%= link_to 'Edit again', edit_post_path(@post), class: "tiny button"%> 
-<%= link_to 'Back to Posts', posts_path, class: "tiny button"%>
+<h2>You can add a comment:</h2>
+
+<%= form_for([@post, @post.comments.build], html:{:class => 'custom'}) do |f| %>
+	<%= render "comments/form", :f=> f %>
+	<div class="actions">
+		<%= f.submit 'Submit', class: "tiny button red" %>
+	</div>
+	<%end %>
+</div>
+<div class="row">
+<%#= link_to 'Edit again', edit_post_path(@post), class: "tiny button"%> 
+<%= link_to 'Back to Posts', home_index_path, class: "tiny button"%>
 </div>
 			

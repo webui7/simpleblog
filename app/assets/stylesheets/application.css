@@ -77,6 +77,10 @@
 	font-size: 0.8em;
 }
 
+.comment-label{
+	color:#008cba;
+}
+
 .post-title{
 	padding:  0 0 10px 17px ;
 	font-weight: bold;
@@ -109,4 +113,15 @@ a.tag-item {
 
 a:hover.tag-item {
 	color:#008cba;;	
+}
+
+.comments-padding{
+	padding: 10px;
+}
+
+
+.comment-body{
+	border: 1px solid #ccc;
+	padding:20px;
+	margin: 20px;
 }

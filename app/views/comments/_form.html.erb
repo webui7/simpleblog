@@ -1,0 +1,10 @@
+<div class="row">
+	<div class="large-2 columns"><%= f.label :title %></div>
+	<div class="large-4 columns left"><%= f.text_field :title , {style: "height:30px"}%></div>
+</div>
+<div class="row">
+	<div class="large-2 columns"> <%= f.label :body %></div>
+	<div class="large-4 columns left" ><%= f.text_area :body , {style: "height:150px"}%></div>
+	<%= f.hidden_field(:post_id, value: @post.id)%>
+	<%= f.hidden_field(:user_id, value: current_user.id) if current_user%>
+</div>

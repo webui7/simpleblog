@@ -1,5 +1,7 @@
 SimpleBlog::Application.routes.draw do
-  resources :posts
+  resources :posts do
+    resources :comments
+  end
   resources :home, only: [:index, :show]
 
   devise_for :users
@@ -13,6 +15,8 @@ SimpleBlog::Application.routes.draw do
   #   get 'products/:id' => 'catalog#view'
   get 'edit_name' => 'posts#edit_name'
   post "update_name" => "posts#update_name"
+  get 'tags/:id/' => "home#index_by_tag"
+  get 'posts_by_user/:id/' => "home#index_by_user"
   
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
