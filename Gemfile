@@ -6,7 +6,7 @@ gem 'foundation-rails'
 gem 'devise'
 gem 'mysql2'#sudo apt-get install libmysql-ruby libmysqlclient-dev
 gem 'will_paginate', '~> 3.0'
-gem 'nokogiri'
+#gem 'nokogiri'
 gem 'capistrano', '~> 2.0'
 #gem 'capistrano-rvm', '~> 0.1.0'
 #gem 'capistrano-bundler'
