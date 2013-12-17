@@ -5,13 +5,11 @@ class HomeController < ApplicationController
   end
   
   def index_by_user
-    puts "!!!!!!!!!!#{params[:id]}"
     @user = User.find(params[:id])
     @posts = Post.posts_by_user(@user).paginate(page: params[:page], per_page: 5, order: 'created_at DESC')
   end
   
   def index_by_tag
-    puts "!!!!!!!!!!#{params[:id]}"
     @tag = Tag.find(params[:id])
     @posts = Post.posts_by_tag(@tag.id).paginate(page: params[:page], per_page: 5, order: 'created_at DESC')
   end
